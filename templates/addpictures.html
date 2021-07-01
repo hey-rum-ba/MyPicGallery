@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-4 text-light" align="center">
+    <div class="alert alert-dark alert-dismissible fade show" role="alert">
+        <strong>Welcome to Upload section.</strong> Please upload a new file everytime.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <form action="/upload" enctype="multipart/form-data" method='POST'>
+        <input type="file" name="pic" />
+        <input type='submit' value='Upload a file' />
+    </form>
+    <a href="/display" class="list-group-item list-group-item-action my-3 badge bg-light text-wrap" style="width: 15rem;"">View all pics uploaded by different users</a>
+</div>
+
+{% endblock body %}

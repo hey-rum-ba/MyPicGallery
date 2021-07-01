@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    td {
+        width: 150px;
+        text-align: center;
+        color: lightblue;
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+<div class="container text-light d-flex justify-content-center align-items-center my-3">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">pic ID</th>
+                <th scope="col"><div class="container d-flex justify-content-center align-items-center">Picture Name</div></th>
+                <th scope="col">Picture mimetype</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {%for img in allpic%}
+                <form method="POST">
+                <th scope="row" label for="number" id="number">{{loop.index}}</th>
+                <td scope="row">{{img.name}}</td>
+                <td scope="row">{{img.mimetype}}</td>
+                <td scope="row"> <a href="/display/{{loop.index}}" class="btn btn-dark my-2" aria-orientation="vertical">View this Picture</button></td></form>
+            </tr>
+                {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+{% endblock body %}

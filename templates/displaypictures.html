@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% block body%}
+<div class="container my-3 text-center text-white ">
+    <div class="mb-3">
+        <h2>Get Your Images</h2>
+        <img src="data:image/jpeg;base64,{{img_data}}" class="img-fluid" height="400px" width="400px"
+            alt="{{img_name}}">
+    </div>
+</div>
+</div>
+
+{% endblock body %}
